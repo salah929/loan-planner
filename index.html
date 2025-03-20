@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -19,8 +20,101 @@
     <!-- Custom CSS -->
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
-</head>
+
 <body>
+
+    <header class="container">
+        <div class="row justify-content-center">
+            <div class="col-12 text-center">
+                <h1 class="display-3">Loan Planner</h1>
+                <h2 class="lead display-6">Plan Your Monthly Payments Easily!</h2>
+                <p class="my-4">Loan Planner helps you calculate and visualize your loan repayment plan with ease.<br>
+                                    Enter the loan amount, interest rate, starting date and monthly payment to generate the schedule.<br>
+                                    Track your remaining balance, interest payments, and principal reduction over time.<br>
+                                    Stay in control of your finances and plan smarter with Loan Planner.</p>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-12 col-lg-8">
+                    <form>
+                        <div class="row">
+                            <div class="col-12 col-md-6 col-xl-4 mb-3">
+                                <label for="amount">Loan Amount</label>
+                                <input class="form-control" id="amount" name="amount" type="number" required>
+                            </div>
+                            <div class="col-12 col-md-6 col-xl-4 mb-3">
+                                <label for="interest">Yearly Interest %</label>
+                                <input class="form-control" id="interest" name="interest" type="number" required>
+                            </div>
+                            <div class="col-12 col-md-6 col-xl-4 mb-3">
+                                <label for="month">Starting Month</label>
+                                <select id="month" class="form-select" name="month" required>
+                                    <option value="" selected>Select</option>
+                                    <option value="1">Jan</option>
+                                    <option value="2">Feb</option>
+                                    <option value="3">Mar</option>
+                                    <option value="4">Apr</option>
+                                    <option value="5">May</option>
+                                    <option value="6">Jun</option>
+                                    <option value="7">Jul</option>
+                                    <option value="8">Aug</option>
+                                    <option value="9">Sep</option>
+                                    <option value="10">Oct</option>
+                                    <option value="11">Nov</option>
+                                    <option value="12">Dec</option>
+                                </select>
+                            </div>
+                            <div class="col-12 col-md-6 col-xl-4 mb-3">
+                                <label for="year">Starting Year</label>
+                                <input class="form-control" id="year" name="year" type="number" required>
+                            </div>
+                            <div class="col-12 col-md-6 col-xl-4 mb-3">
+                                <label for="payment">Monthly Payment</label>
+                                <input class="form-control" id="payment" name="payment" type="number" required>
+                            </div>
+                        </div>
+                        <button type="submit" id="btn">Calculate</button>
+                        
+                    </form>
+                </div>
+            </div>
+
+            <div class="row justify-content-center">
+                <div class="col-12 col-lg-8">
+                    <table id="table" class="table table-striped table-bordered border-primary table-sm">
+                        <thead>
+                          <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Month</th>
+                            <th scope="col">Interest</th>
+                            <th scope="col">Principal</th>
+                            <th scope="col">Balance</th>
+                          </tr>
+                        </thead>
+                        <tbody id="tbody">
+                          
+                        </tbody>
+                      </table>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
+    </script>
+
+    <!-- Font Awesome kit -->
+    <script src="https://kit.fontawesome.com/7dc2726d37.js" crossorigin="anonymous">
+    </script>
     
+    <script src="assets/js/script.js">
+    </script>
 </body>
+
 </html>
