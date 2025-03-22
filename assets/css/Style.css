@@ -1,22 +1,22 @@
-
+/* import google fonts */
 @import url("https://fonts.googleapis.com/css2?family=Lora:wght@400&family=Poppins:wght@700&family=Raleway:wght@400&display=swap");
 
 /* CSS Variables */
 :root {
     --primary-font: 'Poppins', sans-serif;
     --secondary-font: 'Raleway', sans-serif;
-    --sub-font: 'Lora', serif;
 
-    --primary-color: #1E3A5F; /* dark blue */
-    --secondary-color: #3A506B; /* gray blue */
-    --sub-color: #6C757D;
+    --primary-color: #f0f0f0; /* white */
+    --background-color: #1c1c1c; /* black */
 }
 
 body {
     color: var(--primary-color);
+    background-color: var(--background-color);
 }
 
 h1 {
+    color: #1abc9c; /* Teal */
     margin-top: 1rem;
     text-align: center;
     margin-bottom: 1rem;
@@ -25,28 +25,27 @@ h1 {
 }
 
 h2 {
+    color: #48c9b0; /* Light Teal */
     font-family: var(--secondary-font);
 }
-/*
-#description {
-    font-family: var(--sub-font);
-}
-*/
+
 label {
     padding-bottom: .2rem;
 }
 
+input {
+    color: var(--background-color) !important;
+    background-color: var(--primary-color) !important;
+}
+
 select, select option {
-    color: var(--primary-color) !important;
+    color: var(--background-color) !important;
+    background-color: var(--primary-color) !important;
 }
 
 /* Adjust the distance between the lines of the summary */
 p {
     margin-bottom: 0.2rem;
-}
- /* Adjust the margin between the button and the first line of the summary */
-#table-container p:first-child {
-    margin-top: 1rem;
 }
 
 /* The table is hidden until the user click Calculate button */
@@ -54,29 +53,42 @@ p {
     visibility: hidden;
 }
 
+th, td {
+    background-color: var(--background-color) !important; 
+    color: var(--primary-color) !important;
+    padding: 10px !important;
+    border: 1px solid var(--primary-color) !important;
+}
+
 /* Style Calculate button */
-#btn {
-    background-color: var(--primary-color);
-    color: white; /* White Text */
-    margin: 0 auto !important;
-    border: 2px; /* No Border */
-    padding: 8px 16px; /* Size */
-    font-size: 18px; /* Text Size */
-    border-radius: 8px; /* Rounded Corners */
-    cursor: pointer; /* Pointer Cursor */
-    transition: all 0.3s ease; /* Smooth Effect */
+button {
+    background-color: #48c9b0; /* Light Teal */
+    color: var(--background-color);
+    margin-bottom: 1rem;
+    border: 2px;
+    padding: 8px 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
 }
 
 #btn:hover {
-    background-color: var(--secondary-color)
+    background-color: #1abc9c; /* Teal */
 }
 
 
 /* Media queries */
 
 /* X-Small devices (portrait phones, less than 360px) */
-@media (max-width: 360px) {
-    #table {
+@media (max-width: 400px) {
+    
+    body {
         font-size: 80%;
+    }
+    button, input, select, select option {
+        font-size: 0.9rem !important;
+    }
+    h1, h2 {
+        font-size: 200% !important;
     }
 }
