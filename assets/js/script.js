@@ -175,39 +175,31 @@ function addCreditSummary(i, interestSum, creditAmount, lastPayment) {
     let table = document.getElementById("table");
 
     // The summary will be in the table container before the table
-    let p0 = document.createElement("p");
-    p0.textContent = `You will cover the loan in: ${i} payments.`;
-    tableContainer.insertBefore(p0, table);
-
     let p1 = document.createElement("p");
-    p1.textContent = `Total loan time is: ${Math.floor(i / 12)} year(s) and ${i % 12} month(s).`;
+    p1.textContent = `You will cover the loan in: ${i} payments.`;
+    p1.append(document.createElement('br'));
+    p1.append(`Total loan time is: ${Math.floor(i / 12)} year(s) and ${i % 12} month(s).`);
+    p1.append(document.createElement('br'));
+    p1.append(`Total interest amount is: ${interestSum.toFixed(2)}.`);
+    p1.append(document.createElement('br'));
+    p1.append(`Ratio of total interest to loan amount is ${(interestSum / creditAmount * 100).toFixed(2)}%.`);
+    p1.append(document.createElement('br'));
+    p1.append("Details are in the below table.");
+
     tableContainer.insertBefore(p1, table);
-
-    let p2 = document.createElement("p");
-    p2.textContent = `Total interest amount is: ${interestSum.toFixed(2)}.`;
-    tableContainer.insertBefore(p2, table);
-
-    let p3 = document.createElement("p");
-    p3.textContent = `Ratio of total interest to loan amount is ${(interestSum / creditAmount * 100).toFixed(2)}%.`;
-    tableContainer.insertBefore(p3, table);
-
-    let p4 = document.createElement("p");
-    p4.textContent = "Details are in the below table.";
-    tableContainer.insertBefore(p4, table);
 
     // only the summary of the last payment will be after the table
     // and there should be a link to page start
-    let p5 = document.createElement("p");
-    p5.textContent = `The last payment is: ${lastPayment.toFixed(2)}`;
-    p5.appendChild(document.createElement('br'));
+    let p2 = document.createElement("p");
+    p2.textContent = `The last payment is: ${lastPayment.toFixed(2)}`;
+    p2.append(document.createElement('br'));
 
     const upLink = document.createElement('a');
     upLink.href = '#';
     upLink.innerText = 'Go to Top';
+    p2.appendChild(upLink)
 
-    p5.appendChild(upLink)
-
-    tableContainer.appendChild(p5);
+    tableContainer.appendChild(p2);
 }
 
 document.getElementById("btn").addEventListener("click", calculatePlan);
